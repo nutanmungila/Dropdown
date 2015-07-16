@@ -8,11 +8,9 @@ class Dropdown extends React.Component {
       super(props);
       this.onClickbox = this.onClickbox.bind(this);
       this.state = {showPopup:false};
-
   }
 
   componentWillMount(){
-      
   }
 
   onItemSelectedHandler(vl){
@@ -20,23 +18,19 @@ class Dropdown extends React.Component {
   }
   
   onClickbox(e){
-   
     this.setState({showPopup:true});
   }
 
-  render() {
-    return ( 
-      <div>
-
-        <div className="box" ref="menubox" onClick={this.onClickbox}>
-        
-        { this.state.showPopup ? <Popup elements={["aa","bb","cc"]} onItemSelected={this.onItemSelectedHandler}/> : null }
-          
-        </div> 
-      </div>
-    );
+  render(){
+    return( 
+          <div>
+              <div className="box" ref="menubox" onClick={this.onClickbox}>
+              { this.state.showPopup ? <Popup elements={["aa","bb","cc"]} onItemSelected={this.onItemSelectedHandler}/> : null }
+              </div> 
+          </div>
+        );
   }
+  
 }
-
 
 React.render( <Dropdown/> , document.getElementById("div-bx"));
