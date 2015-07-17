@@ -11,7 +11,7 @@ class Main extends React.Component {
   render(){
     return( 
             <div>
-              <Dropdown items={["aa","bb","cc"]}/>
+              <Dropdown items={["aa","bb","cc","dd","ff","gg","hh","ii"]}/>
             </div> 
         );
   }

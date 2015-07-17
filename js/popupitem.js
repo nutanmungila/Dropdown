@@ -12,7 +12,7 @@ class Popupitem extends React.Component{
 	}
 
 	render(){
-		return(<div onClick={this.onClickPopupitem}>{this.props.itm}</div>);
+		return(<div className="popupitem-box" onClick={this.onClickPopupitem}>{this.props.itm}</div>);
 	}
 }
 

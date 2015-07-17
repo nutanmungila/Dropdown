@@ -8,10 +8,10 @@ class Dropdown extends React.Component {
       super(props);
       this.onClickbox = this.onClickbox.bind(this);
       this.onItemSelectedHandler = this.onItemSelectedHandler.bind(this);
-      this.state = {showPopup:false,selectedItemvalue:""};
+      this.state = {showPopup:false,selectedItemvalue:"Dropdown"};
   }
 
-  onItemSelectedHandler(vl){
+  onItemSelectedHandler(vl){ 
       React.findDOMNode(this.refs.menubox).value = vl;
       this.setState({selectedItemvalue:vl});
   }
@@ -22,8 +22,11 @@ class Dropdown extends React.Component {
 
   render(){
       return( 
-            <div className="box" ref="menubox" onClick={this.onClickbox}>{this.state.selectedItemvalue}
+            <div className="box" ref="menubox" onClick={this.onClickbox}>
+              <div className="ddText">
+              {this.state.selectedItemvalue}
               { this.state.showPopup ? <Popup elts={this.props.items} onItemSelected={this.onItemSelectedHandler}/> : null }
+              </div> 
             </div> 
         );
   }
