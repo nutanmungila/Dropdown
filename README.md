@@ -1,6 +1,4 @@
-## Simple React Boilerplate
-
-A simple starter project for React (and other projects--just remove React). Starts a local server with livereload enabled and rebuilds automatically with Browserify and SASS. `.js` files can be JSX and make use of ES6 features thanks to Babel.
+##  Dropdown Component
 
 ## To start
 
