@@ -2,7 +2,7 @@
 import React from 'react';
 import Dropdown from './dropdown';
 
-class Main extends React.Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,11 +11,15 @@ class Main extends React.Component {
   render(){
     return( 
             <div>
-              <Dropdown items={["aa","bb","cc","dd","ff","gg","hh","ii"]}/>
+              <Dropdown items={this.props.itemList}/>
             </div> 
         );
   }
   
 }
 
-React.render( <Main /> , document.getElementById("div-bx"));
+App.propTypes = { itemList: React.PropTypes.array.isRequired };
+App.defaultProps = { itemList: ["aa","bb","cc","dd","ff","gg","hh","ii"] };
+
+React.render( <App /> , document.getElementById("div-bx"));
+
