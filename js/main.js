@@ -1,36 +1,21 @@
 'use strict';
 import React from 'react';
-import Popup from './popup';
+import Dropdown from './dropdown';
 
-class Dropdown extends React.Component {
+class Main extends React.Component {
 
   constructor(props) {
-      super(props);
-      this.onClickbox = this.onClickbox.bind(this);
-      this.state = {showPopup:false};
-  }
-
-  componentWillMount(){
-  }
-
-  onItemSelectedHandler(vl){
-      console.log(vl);
-  }
-  
-  onClickbox(e){
-    this.setState({showPopup:true});
+    super(props);
   }
 
   render(){
     return( 
-          <div>
-              <div className="box" ref="menubox" onClick={this.onClickbox}>
-              { this.state.showPopup ? <Popup elements={["aa","bb","cc"]} onItemSelected={this.onItemSelectedHandler}/> : null }
-              </div> 
-          </div>
+            <div>
+              <Dropdown items={["aa","bb","cc"]}/>
+            </div> 
         );
   }
   
 }
 
-React.render( <Dropdown/> , document.getElementById("div-bx"));
+React.render( <Main /> , document.getElementById("div-bx"));
